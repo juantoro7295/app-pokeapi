@@ -18,6 +18,7 @@ export class AppComponent {
     this.$pokemon.getPokemon().subscribe((res: any) => {
       this.pokemones = res.results;
     });
+    
   }
 
   getInfo(url: string) {
