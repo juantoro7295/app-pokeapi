@@ -10,6 +10,10 @@ export class PokemonService {
 
   //obtener pokemones 
   getPokemon() {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=20');
+    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=150');
+  }
+
+  getinfo(url: string) {
+    return this.http.get(url);
   }
 }

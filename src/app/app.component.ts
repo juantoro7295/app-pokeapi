@@ -12,11 +12,18 @@ import { PokemonService } from './services/pokemon.service';
 export class AppComponent {
   title = 'app-pokeapi';
   pokemones = null;
+  pokemon: any = {}
 
   constructor(private $pokemon: PokemonService) { 
     this.$pokemon.getPokemon().subscribe((res: any) => {
       this.pokemones = res.results;
     });
+  }
+
+  getInfo(url: string) {
+    this.$pokemon.getinfo(url).subscribe((res: any) => {
+      this.pokemon = res;
+    })
   }
 
 
